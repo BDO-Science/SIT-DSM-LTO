@@ -1,0 +1,33 @@
+to calculate diversions with a value in the combined_flow column: cal_sim_flow_node / combined_flow * cal_sim_diversion_nodes , watersheds with multiple nodes are represented by suming the nodes,,,,,,
+order,watershed,calsim_habitat_flow,cal_sim_flow_nodes,cal_sim_diversion_nodes,combined_flow,notes,Tompkins Review
+1,Upper Sacramento River,C104,C104,D104,,"flow between Keswick and Clear Creek Confluence -- only sac river spawners populate, no migration in",Agree
+2,Antelope Creek,C11307,C11307,D11305,C11305,,Agree
+3,Battle Creek,C10803,C10803,NA,,,Agree
+4,Bear Creek,C11001,C11001,NA,,Use Paynes,Agree
+5,Big Chico Creek,C11501,C11501,NA,,,Agree
+6,Butte Creek,C217A,C217A,"C217B, D217",,Butte creek flows to C135 --> C136A --> C137 through Sutter Bypass,Agree
+7,Clear Creek,C3,C3,NA,,,Agree
+8,Cottonwood Creek,C10802,C10802,NA,,,Agree
+9,Cow Creek,C10801,C10801,NA,,,Agree
+10,Deer Creek,C11309,C11309,D11305,C11305,,Agree
+11,Elder Creek,C11303,C11303,D11301,C11301,,Agree
+12,Mill Creek,C11308,C11308,D11305,C11305,,Agree
+13,Paynes Creek,C11001,C11001,NA,,,Agree
+14,Stony Creek,C142A,C42,D17301,,,Agree
+15,Thomes Creek,C11304,C11304,D11301,C11301,,Agree
+16,Upper-mid Sacramento River,C115,C110,"D109, D112, D113A, D113B, D114, D118, D122A, D122B, D122_EWA, D122_WTS, D123, D124A,  D128_EWA, D128_WTS, D128, ",,"collector segment for cow, clear, deer, mill, antelope, et al","Agree, but this misses Big Chico Creek inflow"
+17,Sutter Bypass,"D117, D124, D125, D126","D117, D124, D125, D126",NA,,,Agree - Sadie to plot Sutter and look at the 4 D flows with Mark
+18,Bear River,C285,C285,D285,,,Agree
+19,Feather River,C203,C6,"D201, D202, D7A, D7B",,,Agree
+20,Yuba River,C230,C230,D230,,,Agree - C231 not in Mike W latest CALSIM2 run
+21,Lower-mid Sacramento River,35.6/58*C134 + 22.4/58*C160,C128,"D129A, D134, D162, D163, D165, D165A",,"collector segment for yolo, feather, butte, et al",Mark / Sadie revisit flow / habitat  above and below Fremont Weir
+22,Yolo Bypass,C157,C157,NA,,,Agree
+23,American River,C9,C9,D302,,,Agree
+24,Lower Sacramento River,C166,C166,"D167, D168, D168A_WTS",,collector segment for sac river,Agree
+25,Calaveras River,C92,C92,"D506A, D506B, D506C, D507",,,Agree
+26,Cosumnes River,C501,C501,NA,,,Agree
+27,Mokelumne River,C91,C91,"D503A, D503B, D503C, D502A, D502B",,need seperate run from mike U,Agree
+28,Merced River,C561,C561,"D562, D566",,,Agree
+29,Stanislaus River,C520,C520,D528,,,Agree
+30,Tuolumne River,C540,C540,D545,,,Agree
+31,San Joaquin River,C630,C637,"D637, D630B, D630A, D620B",,Prop Diversion = Diversions / Diversions + Flow,Agree
