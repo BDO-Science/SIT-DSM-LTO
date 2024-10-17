@@ -84,9 +84,14 @@ scenarioRun = 0 # DON'T CHANGE
   # Right now, this is set up to update both temperature and flow if an alternative CalSim run is selected
   # Need to ensure the same file naming structure is used for both new flow and temperature inputs
 
-alt <- c("Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423")
+alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
   # All relevant dss files:
     # originalDSM
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024
     # Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023
@@ -180,9 +185,14 @@ out.prop.dlt.entrain <- array(NA, dim=c(20,7,n.iter),
 # Right now, this is set up to update both temperature and flow if an alternative CalSim run is selected
 # Need to ensure the same file naming structure is used for both new flow and temperature inputs
 
-alt <- c("Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423")
+alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
   #c("originalDSM")
   # All relevant dss files:
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024
     # Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023

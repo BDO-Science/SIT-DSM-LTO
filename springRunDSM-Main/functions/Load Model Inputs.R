@@ -15,6 +15,11 @@ load_model_inputs<-function(alt = "originalDSM",
   
   #check that a valid alternative has been added (if not, an error will let you know)
   valid_alts <-  c("originalDSM", 
+                   "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024",
+                   "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024",
+                   "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024",
+                   "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024",
+                   "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024",
                    "Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW",
                    "Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW",
                    "Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",

@@ -43,12 +43,12 @@ if(out.name=="EIS"){ # EIS (NAA, Alternatives 1-4)
                       "Alt4")
   alt_file_names <- c("Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",
                       "Reclamation_2021LTO_CalSim3_Alt1_2022MED_09092023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_090723",
-                      "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_090723",
+                      "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024",
                       "Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423",
-                      "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09082023")
+                      "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024")
 } else if(out.name=="BA"){ # BA (NAA, EXP1, EXP3, PA (ALT2))
   n.alt <- 7
   alt_plot_names <- c("EXP1","EXP3","NAA","Alt2wTUCPwoVA","Alt2woTUCPwoVA",
@@ -56,10 +56,10 @@ if(out.name=="EIS"){ # EIS (NAA, Alternatives 1-4)
   alt_file_names <- c("Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW",
                       "Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW",
                       "Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_090723",
-                      "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_090723")
+                      "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024",
+                      "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024")
 } else if(out.name=="BA Ch"){ # BA Chapter (NAA, EXP1, EXP3, PA (ALT2) - 3 phases)
   n.alt <- 6
   alt_plot_names <- c("EXP1","EXP3","NAA","Alt2woTUCPwoVA",

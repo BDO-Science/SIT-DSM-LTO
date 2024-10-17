@@ -28,8 +28,13 @@
 # ***CHANGE THESE DIRECTORIES***
 
 HEC_direc <- "C:\\Program Files\\HEC\\HEC-DSSVue\\" # Point to where your HEC-DSSVue program is located 
-dss_file <- 'Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423'
+dss_file <- 'Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024'
   # All relevant dss files:
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024
+    ## Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024
     # Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW
     # Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023

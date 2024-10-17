@@ -3,7 +3,7 @@ date: "`r Sys.Date()`"
 title: "All SR SIT DSM Summary Tables - EIS"
 output: 
   officedown::rdocx_document:
-        reference_docx: C:/Users/ajensen/OneDrive - DOI/Documents/Science Division/R resources/TableTemplate.docx
+        reference_docx: C:/Users/avaisvil/Downloads/SIT-DSM-LTO-main/SIT-DSM-LTO-main/TableTemplate.docx
         tables:
           style: StyleAlpha
 ---
@@ -17,6 +17,15 @@ require(readr)
 require(here)
 ```
 
+```{r, echo=FALSE}
+# Function to calculate percent differences and append to the table
+calculate_percent_diff <- function(table){
+  for(i in 3:ncol(table)){
+    table[, i] <- paste0(table[, i], " (", round(((table[, i] - table[, 2]) / table[, 2]) * 100, 1), ")")
+  }
+  return(table)
+}
+```
 
 ##### '
 ## EIS 
@@ -27,14 +36,8 @@ require(here)
 table1 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_AllSpawners.csv")))
 colnames(table1) <- gsub("."," ", colnames(table1), fixed=TRUE)
 table1 <- round(table1)
+#table1 <- calculate_percent_diff(table1)
 table1
-```
-
-```{r tab.cap="Table EIS.1b. Predicted percent difference in annual total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish, relative to NAA.", tab.id="TableEISb1", echo=FALSE}
-table1b <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_AllSpawnersPercDiff.csv")))
-colnames(table1b) <- gsub("."," ", colnames(table1b), fixed=TRUE)
-table1b <- round(table1b,3)
-table1b
 ```
 
 ##### '
@@ -43,14 +46,8 @@ table1b
 table2 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_NatSpawners.csv")))
 colnames(table2) <- gsub("."," ", colnames(table2), fixed=TRUE)
 table2 <- round(table2)
+#table2 <- calculate_percent_diff(table2)
 table2
-```
-
-```{r tab.cap="Table EIS.2b. Predicted percent difference in annual natural-origin spring-run spawner abundance in the Central Valley, relative to NAA.", tab.id="TableEIS2b", echo=FALSE}
-table2b <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_NatSpawnersPercDiff.csv")))
-colnames(table2b) <- gsub("."," ", colnames(table2b), fixed=TRUE)
-table2b <- round(table2b,3)
-table2b
 ```
 
 ##### '
@@ -64,19 +61,18 @@ table3 <- rbind(mlambda_wyt, table3)
 
 colnames(table3) <- gsub("."," ", colnames(table3), fixed=TRUE)
 table3[,2:length(table3)] <- round(table3[,2:length(table3)], 3)
+#table3 <- calculate_percent_diff(table3)
 table3
 ```
 
-```{r tab.cap="Table EIS.3b. Predicted percent difference in mean lambda (Nt+1/Nt) for total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish, relative to NAA.", tab.id="TableEIS3b", echo=FALSE}
-table3b <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_MeanLambdaPercDiff.csv")))
-table3b$WYT <- "All"
-
-mlambda_wyt <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_WYTMeanLambdaPercDiff.csv")))
-table3b <- rbind(mlambda_wyt, table3b)
-
-colnames(table3b) <- gsub("."," ", colnames(table3b), fixed=TRUE)
-table3b[,2:length(table3b)] <- round(table3b[,2:length(table3b)], 3)
-table3b
+```{r, echo=FALSE}
+# Function to calculate percent differences and append to the table
+calculate_percent_diff <- function(table){
+  for(i in 2:ncol(table)){
+    table[, i] <- paste0(table[, i], " (", round(((table[, i] - table[, 1]) / table[, 1]) * 100, 1), ")")
+  }
+  return(table)
+}
 ```
 
 ##### '
@@ -85,14 +81,8 @@ table3b
 table4 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_EndLambda.csv")))
 colnames(table4) <- gsub("."," ", colnames(table4), fixed=TRUE)
 table4 <- round(table4, 3)
+table4 <- calculate_percent_diff(table4)
 table4
-```
-
-```{r tab.cap="Table EIS.4b. Predicted percent difference in end lambda (Nt=19/Nt=1) for total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish.", tab.id="TableEIS4b", echo=FALSE}
-table4b <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_EndLambdaPercDiff.csv")))
-colnames(table4b) <- gsub("."," ", colnames(table4b), fixed=TRUE)
-table4b <- round(table4b, 3)
-table4b
 ```
 
 ##### '

@@ -3,7 +3,7 @@ date: "`r Sys.Date()`"
 title: "All SR SIT DSM Summary Tables - BA"
 output: 
   officedown::rdocx_document:
-        reference_docx: C:/Users/lelliott/OneDrive - DOI/Documents/Resources/TableTemplate.docx
+        reference_docx: C:/Users/avaisvil/Downloads/SIT-DSM-LTO-main/SIT-DSM-LTO-main/TableTemplate.docx
         tables:
           style: StyleAlpha
 ---
