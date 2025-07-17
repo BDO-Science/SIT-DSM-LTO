@@ -3,7 +3,7 @@ date: "`r Sys.Date()`"
 title: "All WR SIT DSM Summary Tables - EIS"
 output: 
   officedown::rdocx_document:
-        reference_docx: C:/Users/avaisvil/Downloads/SIT-DSM-LTO-main/SIT-DSM-LTO-main/TableTemplate.docx
+        reference_docx: C:/Users/avaisvil/OneDrive - DOI/Documents/LTO Modeling/SIT-DSM-LTO/TableTemplate.docx
         tables:
           style: StyleAlpha
 ---
@@ -33,7 +33,7 @@ calculate_percent_diff <- function(table){
 ### Population Abundance, Growth
 
 ```{r tab.cap="Table EIS.1. Predicted annual total winter-run spawner abundance in the Upper Sacramento River, including both natural- and hatchery-origin fish.", tab.id="TableEIS1", echo=FALSE}
-table1 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_AllSpawners.csv")))
+table1 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_AllSpawnersAct5.csv")))
 colnames(table1) <- gsub("."," ", colnames(table1), fixed=TRUE)
 table1 <- round(table1)
 table1 <- calculate_percent_diff(table1)
@@ -43,7 +43,7 @@ table1
 ##### '
 
 ```{r tab.cap="Table EIS.2. Predicted annual natural-origin winter-run spawner abundance in the Upper Sacramento River.", tab.id="TableEIS2", echo=FALSE}
-table2 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_NatSpawners.csv")))
+table2 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_NatSpawnersAct5.csv")))
 colnames(table2) <- gsub("."," ", colnames(table2), fixed=TRUE)
 table2 <- round(table2)
 table2 <- calculate_percent_diff(table2)
@@ -53,10 +53,10 @@ table2
 ##### '
 
 ```{r tab.cap="Table EIS.3. Predicted mean lambda (Nt+1/Nt) for total winter-run spawner abundance in the Upper Sacramento River, including both natural- and hatchery-origin fish.", tab.id="TableEIS3", echo=FALSE}
-table3 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_MeanLambda.csv")))
+table3 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_MeanLambdaAct5.csv")))
 table3$WYT <- "All"
 
-mlambda_wyt <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_WYTMeanLambda.csv")))
+mlambda_wyt <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_WYTMeanLambdaAct5.csv")))
 table3 <- rbind(mlambda_wyt, table3)
 
 colnames(table3) <- gsub("."," ", colnames(table3), fixed=TRUE)
@@ -65,20 +65,10 @@ table3 <- calculate_percent_diff(table3)
 table3
 ```
 
-```{r, echo=FALSE}
-# Function to calculate percent differences and append to the table
-calculate_percent_diff <- function(table){
-  for(i in 2:ncol(table)){
-    table[, i] <- paste0(table[, i], " (", round(((table[, i] - table[, 1]) / table[, 1]) * 100, 1), ")")
-  }
-  return(table)
-}
-```
-
 ##### '
 
 ```{r tab.cap="Table EIS.4. Predicted terminal lambda (Nt=19/Nt=1) for total winter-run spawner abundance in the Upper Sacramento River, including both natural- and hatchery-origin fish, from deterministic model runs.", tab.id="TableEIS4", echo=FALSE}
-table4 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_EndLambda.csv")))
+table4 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_EndLambdaAct5.csv")))
 colnames(table4) <- gsub("."," ", colnames(table4), fixed=TRUE)
 table4 <- round(table4, 3)
 table4 <- calculate_percent_diff(table4)
@@ -92,55 +82,55 @@ table4
 ### Demographic Parameters
 
 ```{r tab.cap="Table EIS.5. Predicted small juvenile rearing survival for winter-run Chinook salmon in the Upper Sacramento River.", tab.id="TableEIS5", echo=FALSE}
-table5 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_SRearUSR.csv")))
+table5 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_SRearUSRAct5.csv")))
 colnames(table5) <- gsub("."," ", colnames(table5), fixed=TRUE)
-table5[,3:9] <- round(table5[,3:9], 3)
-#table5 <- calculate_percent_diff(table5)
+table5[,3:11] <- round(table5[,3:11], 3)
+table5 <- calculate_percent_diff(table5)
 table5
 ```
 ##### ' 
 
 ```{r tab.cap="Table EIS.6. Predicted smolt migratory survival for winter-run Chinook salmon in the Upper-mid Sacramento River.", tab.id="TableEIS6", echo=FALSE}
-table6 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrUM.csv")))
+table6 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrUMAct5.csv")))
 colnames(table6) <- gsub("."," ", colnames(table6), fixed=TRUE)
-table6[,3:9] <- round(table6[,3:9], 3)
-#table6 <- calculate_percent_diff(table6)
+table6[,3:11] <- round(table6[,3:11], 3)
+table6 <- calculate_percent_diff(table6)
 table6
 ```
 ##### ' 
 
 ```{r tab.cap="Table EIS.7. Predicted smolt migratory survival for winter-run Chinook salmon in the Lower-mid Sacramento River.", tab.id="TableEIS7", echo=FALSE}
-table7 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrLM.csv")))
+table7 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrLMAct5.csv")))
 colnames(table7) <- gsub("."," ", colnames(table7), fixed=TRUE)
-table7[,3:9] <- round(table7[,3:9], 3)
-#table7 <- calculate_percent_diff(table7)
+table7[,3:11] <- round(table7[,3:11], 3)
+table7 <- calculate_percent_diff(table7)
 table7
 ```
 
 ##### '
 ```{r tab.cap="Table EIS.8. Predicted smolt migratory survival for winter-run Chinook salmon in the Lower Sacramento River.", tab.id="TableEIS8", echo=FALSE}
-table8 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrLL.csv")))
+table8 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrLLAct5.csv")))
 colnames(table8) <- gsub("."," ", colnames(table8), fixed=TRUE)
-table8[,3:9] <- round(table8[,3:9], 2)
-#table8 <- calculate_percent_diff(table8)
+table8[,3:11] <- round(table8[,3:11], 2)
+table8 <- calculate_percent_diff(table8)
 table8
 ```
 
 ##### '
 ```{r tab.cap="Table EIS.9. Predicted smolt migratory survival for winter-run Chinook salmon in the North Delta.", tab.id="TableEIS9", echo=FALSE}
-table9 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrNDelta.csv")))
+table9 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrNDeltaAct5.csv")))
 colnames(table9) <- gsub("."," ", colnames(table9), fixed=TRUE)
-table9[,3:9] <- round(table9[,3:9], 3)
-#table9 <- calculate_percent_diff(table9)
+table9[,3:11] <- round(table9[,3:11], 3)
+table9 <- calculate_percent_diff(table9)
 table9
 ```
 
 ##### '
 ```{r tab.cap="Table EIS.10. Predicted smolt migratory survival for winter-run Chinook salmon in the South Delta.", tab.id="TableEIS10", echo=FALSE}
-table10 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrSDelta.csv")))
+table10 <- read.csv(here(paste0("winterRunDSM-Main/Output/Tables/EIS_VLMigrSDeltaAct5.csv")))
 colnames(table10) <- gsub("."," ", colnames(table10), fixed=TRUE)
-table10[,3:9] <- round(table10[,3:9], 3)
-#table10 <- calculate_percent_diff(table10)
+table10[,3:11] <- round(table10[,3:11], 3)
+table10 <- calculate_percent_diff(table10)
 table10
 ```
 ##### '

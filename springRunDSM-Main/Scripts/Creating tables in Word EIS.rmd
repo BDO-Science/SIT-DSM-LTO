@@ -3,7 +3,7 @@ date: "`r Sys.Date()`"
 title: "All SR SIT DSM Summary Tables - EIS"
 output: 
   officedown::rdocx_document:
-        reference_docx: C:/Users/avaisvil/Downloads/SIT-DSM-LTO-main/SIT-DSM-LTO-main/TableTemplate.docx
+        reference_docx: C:/Users/avaisvil/OneDrive - DOI/Documents/LTO Modeling/SIT-DSM-LTO/TableTemplate.docx
         tables:
           style: StyleAlpha
 ---
@@ -36,7 +36,7 @@ calculate_percent_diff <- function(table){
 table1 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_AllSpawners.csv")))
 colnames(table1) <- gsub("."," ", colnames(table1), fixed=TRUE)
 table1 <- round(table1)
-#table1 <- calculate_percent_diff(table1)
+table1 <- calculate_percent_diff(table1)
 table1
 ```
 
@@ -46,7 +46,7 @@ table1
 table2 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/EIS_NatSpawners.csv")))
 colnames(table2) <- gsub("."," ", colnames(table2), fixed=TRUE)
 table2 <- round(table2)
-#table2 <- calculate_percent_diff(table2)
+table2 <- calculate_percent_diff(table2)
 table2
 ```
 
@@ -61,7 +61,7 @@ table3 <- rbind(mlambda_wyt, table3)
 
 colnames(table3) <- gsub("."," ", colnames(table3), fixed=TRUE)
 table3[,2:length(table3)] <- round(table3[,2:length(table3)], 3)
-#table3 <- calculate_percent_diff(table3)
+table3 <- calculate_percent_diff(table3)
 table3
 ```
 

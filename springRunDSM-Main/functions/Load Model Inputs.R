@@ -29,7 +29,8 @@ load_model_inputs<-function(alt = "originalDSM",
                    "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_090723",
                    "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_090723",
                    "Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423",
-                   "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09082023")
+                   "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09082023",
+                   "CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1")
   if (!(alt %in% valid_alts)) stop("Invalid alt passed to load_model_inputs")
   
   # Read in baseline data

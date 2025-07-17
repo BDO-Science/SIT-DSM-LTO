@@ -83,7 +83,7 @@ scenarioRun = 0
   # Right now, this is set up to update both temperature and flow if an alternative CalSim run is selected
   # Need to ensure the same file naming structure is used for both new flow and temperature inputs
 
-alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
+alt <- c("Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023")
   # All recent CalSim 3 alternatives
     # originalDSM
     ## Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024
@@ -101,6 +101,7 @@ alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
     # Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_090723
     # Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423
     # Reclamation_2021LTO_CalSim3_Alt4_2022MED_09082023
+    # "CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1"
 
 load_model_inputs(alt)
 
@@ -132,7 +133,7 @@ if(alt == "originalDSM"){
 seed <- readRDS("./winterRunDSM-Main/spawners_seed_recalibration.rds")
 
   # Run model
-base<-life_cycle_model_v2(stochastic=0,scenario=scenarioRun,vary="Nothing",
+base<-life_cycle_model_v2(stochastic=0, scenario=scenarioRun, vary="Nothing",
                           pctil=1, alt=alt, spwners=seed)
 
 # Save results
@@ -182,7 +183,7 @@ out.prop.dlt.entrain <- array(NA, dim=c(20,9,n.iter),
 # Right now, this is set up to update both temperature and flow if an alternative CalSim run is selected
 # Need to ensure the same file naming structure is used for both new flow and temperature inputs
 
-alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
+alt <- c("CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1")
   # All recent CalSim 3 alternatives
     ## Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024
     ## Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024
@@ -199,6 +200,7 @@ alt <- c("Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024")
     # Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_090723
     # Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423
     # Reclamation_2021LTO_CalSim3_Alt4_2022MED_09082023
+    # "CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1"
 
 load_model_inputs(alt)
 
