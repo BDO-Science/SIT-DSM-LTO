@@ -135,4 +135,33 @@ table10
 ```
 ##### '
 
+```{r summary, echo=FALSE, message=FALSE}
+library(stringr)
 
+# pull in your ten tables by name
+tables <- mget(paste0("table", 1:10))
+names(tables) <- paste0("Table", 1:10)
+
+# helper to extract the leading number from any cell
+extract_num <- function(x) {
+  if (is.numeric(x)) return(x)
+  as.numeric(str_extract(x, "-?[0-9]+\\.?[0-9]*"))
+}
+
+cat("## Table min/max summary (cols 3–end)\n")
+for (nm in names(tables)) {
+  df <- tables[[nm]]
+  # only columns 3 through end
+  if (ncol(df) < 3) {
+    cat(sprintf("- %s → fewer than 3 columns, skipped\n", nm))
+    next
+  }
+  df_sub <- df[, 3:ncol(df)]
+  all_vals <- unlist(lapply(df_sub, extract_num))
+  all_vals <- all_vals[!is.na(all_vals)]
+  cat(sprintf("- %s → min = %s; max = %s\n",
+              nm,
+              format(min(all_vals), digits = 6),
+              format(max(all_vals), digits = 6)))
+}
+```

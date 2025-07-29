@@ -51,7 +51,7 @@ if(model_type=="Det"){
 }
 
 # Load WYT reference for plotting
-wyt_ref <- read.csv("./winterRunDSM-Main/wyt_ref.csv")
+wyt_ref <- read.csv("./winterRunDSM-Main/wyt_refAct5.csv")
 
   #############################
   # Population abundance/growth
@@ -96,7 +96,7 @@ df.table1 <- spawn_df %>%
   select(Year, Alternative, `All Spawners (Across Watersheds)`) %>%
   pivot_wider(names_from=Alternative, values_from=`All Spawners (Across Watersheds)`) %>%
   select(Year, alt_plot_names)
-write.csv(df.table1, paste0("./springRunDSM-Main/Output/Tables/EIS_AllSpawners.csv"),
+write.csv(df.table1, paste0("./springRunDSM-Main/Output/Tables/EIS_AllSpawnersAct5.csv"),
           row.names=FALSE)
 
 df.table1b <- df.table1 %>%
@@ -111,7 +111,7 @@ df.table1b <- df.table1 %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.table1b, paste0("./springRunDSM-Main/Output/Tables/EIS_AllSpawnersPercDiff.csv"),
+write.csv(df.table1b, paste0("./springRunDSM-Main/Output/Tables/EIS_AllSpawnersPercDiffAct5.csv"),
           row.names=FALSE)
 
 # Ending abundance - natural spawners
@@ -153,7 +153,7 @@ df.table2 <- spawn_df %>%
   select(Year, Alternative, `Natural Spawners (Across Watersheds)`) %>%
   pivot_wider(names_from=Alternative, values_from=`Natural Spawners (Across Watersheds)`) %>%
   select(Year, alt_plot_names)
-write.csv(df.table2, paste0("./springRunDSM-Main/Output/Tables/EIS_NatSpawners.csv"),
+write.csv(df.table2, paste0("./springRunDSM-Main/Output/Tables/EIS_NatSpawnersAct5.csv"),
           row.names=FALSE)
 
 df.table2b <- df.table2 %>%
@@ -168,7 +168,7 @@ df.table2b <- df.table2 %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.table2b, paste0("./springRunDSM-Main/Output/Tables/EIS_NatSpawnersPercDiff.csv"),
+write.csv(df.table2b, paste0("./springRunDSM-Main/Output/Tables/EIS_NatSpawnersPercDiffAct5.csv"),
           row.names=FALSE)
 
 # Mean lambda, end lambda
@@ -192,7 +192,7 @@ df.table3 <- tibble(`Mean Lambda`=lambda_mean,
   pivot_wider(values_from=`Mean Lambda`, names_from=Alternative) %>%
   as.data.frame() %>%
   select(alt_plot_names)
-write.csv(df.table3, paste0("./springRunDSM-Main/Output/Tables/EIS_MeanLambda.csv"),
+write.csv(df.table3, paste0("./springRunDSM-Main/Output/Tables/EIS_MeanLambdaAct5.csv"),
           row.names=FALSE)
 
 df.table3b <- df.table3 %>%
@@ -207,7 +207,7 @@ df.table3b <- df.table3 %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.table3b, paste0("./springRunDSM-Main/Output/Tables/EIS_MeanLambdaPercDiff.csv"),
+write.csv(df.table3b, paste0("./springRunDSM-Main/Output/Tables/EIS_MeanLambdaPercDiffAct5.csv"),
           row.names=FALSE)
 
   #Mean lambda faceted by WYT
@@ -224,7 +224,7 @@ mlambda_wyt_df <- as_tibble(mlambda_wyt_df) %>%
   pivot_wider(names_from=Alternative, values_from=wy_mean_lambda) %>%
   as.data.frame() %>%
   select(WYT, alt_plot_names)
-write.csv(mlambda_wyt_df, paste0("./springRunDSM-Main/Output/Tables/EIS_WYTMeanLambda.csv"),
+write.csv(mlambda_wyt_df, paste0("./springRunDSM-Main/Output/Tables/EIS_WYTMeanLambdaAct5.csv"),
           row.names=FALSE)
 
 mlambda_wyt_dfb <- mlambda_wyt_df %>%
@@ -239,7 +239,7 @@ mlambda_wyt_dfb <- mlambda_wyt_df %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(mlambda_wyt_dfb, paste0("./springRunDSM-Main/Output/Tables/EIS_WYTMeanLambdaPercDiff.csv"),
+write.csv(mlambda_wyt_dfb, paste0("./springRunDSM-Main/Output/Tables/EIS_WYTMeanLambdaPercDiffAct5.csv"),
           row.names=FALSE)
 
 # End lambda
@@ -248,7 +248,7 @@ df.table4 <- tibble(`End Lambda`=end_lambda,
   pivot_wider(values_from=`End Lambda`, names_from=Alternative) %>%
   as.data.frame() %>%
   select(alt_plot_names)
-write.csv(df.table4, paste0("./springRunDSM-Main/Output/Tables/EIS_EndLambda.csv"),
+write.csv(df.table4, paste0("./springRunDSM-Main/Output/Tables/EIS_EndLambdaAct5.csv"),
           row.names=FALSE)
 
 df.table4b <- df.table4 %>%
@@ -263,7 +263,7 @@ df.table4b <- df.table4 %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.table4b, paste0("./springRunDSM-Main/Output/Tables/EIS_EndLambdaPercDiff.csv"),
+write.csv(df.table4b, paste0("./springRunDSM-Main/Output/Tables/EIS_EndLambdaPercDiffAct5.csv"),
           row.names=FALSE)
 
   ########################
@@ -306,7 +306,7 @@ df.tablex <- rbind(rear_s_df_all, rear_s_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_SRearUSR.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_SRearUSRAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -322,7 +322,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_SRearUSRPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_SRearUSRPercDiffAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Upper-mid Sacramento River
@@ -358,7 +358,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrUM.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrUMAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -374,7 +374,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrUMPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrUMPercDiffAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Lower-mid Sacramento River
@@ -411,7 +411,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLM.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLMAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -427,7 +427,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLMPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLMPercDiffAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Lower Sacramento River
@@ -464,7 +464,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLL.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLLAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -480,7 +480,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLLPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrLLPercDiffAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, N Delta
@@ -516,7 +516,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrNDelta.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrNDeltaAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -532,7 +532,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrNDeltaPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrNDeltaPercDiffAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, S Delta
@@ -568,7 +568,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrSDelta.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrSDeltaAct5.csv"),
           row.names=FALSE)
 
 df.tablexb <- df.tablex %>%
@@ -584,7 +584,7 @@ df.tablexb <- df.tablex %>%
          `Alt2woTUCPAllVA`,
          Alt3,
          Alt4, Action5)
-write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrSDeltaPercDiff.csv"),
+write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrSDeltaPercDiffAct5.csv"),
           row.names=FALSE)
 
 ######
@@ -592,16 +592,17 @@ write.csv(df.tablexb, paste0("./springRunDSM-Main/Output/Tables/EIS_VLMigrSDelta
 ######
 
 # These parameters will be updated once we have final estimates for all alternatives.
-n.alt <- 7
+n.alt <- 8
 alt_plot_names <- c("EXP1","EXP3","NAA","Alt2wTUCPwoVA","Alt2woTUCPwoVA",
-                    "Alt2woTUCPDeltaVA","Alt2woTUCPAllVA")
+                    "Alt2woTUCPDeltaVA","Alt2woTUCPAllVA", "Act5")
 alt_file_names <- c("Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW",
                     "Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW",
                     "Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",
                     "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024",
                     "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024",
                     "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024",
-                    "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024")
+                    "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024",
+                    "CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1")
 
 # Set up comparisons of interest - OLD
 # FOR TESTING PURPOSES ONLY
@@ -672,7 +673,7 @@ df.table1 <- spawn_df %>%
   select(Year, Alternative, `All Spawners (Across Watersheds)`) %>%
   pivot_wider(names_from=Alternative, values_from=`All Spawners (Across Watersheds)`) %>%
   select(Year, alt_plot_names)
-write.csv(df.table1, paste0("./springRunDSM-Main/Output/Tables/BA_AllSpawners.csv"),
+write.csv(df.table1, paste0("./springRunDSM-Main/Output/Tables/BA_AllSpawners_Act5.csv"),
           row.names=FALSE)
 
 # Ending abundance - natural spawners
@@ -714,7 +715,7 @@ df.table2 <- spawn_df %>%
   select(Year, Alternative, `Natural Spawners (Across Watersheds)`) %>%
   pivot_wider(names_from=Alternative, values_from=`Natural Spawners (Across Watersheds)`) %>%
   select(Year, alt_plot_names)
-write.csv(df.table2, paste0("./springRunDSM-Main/Output/Tables/BA_NatSpawners.csv"),
+write.csv(df.table2, paste0("./springRunDSM-Main/Output/Tables/BA_NatSpawnersAct5.csv"),
           row.names=FALSE)
 
 # Mean lambda, end lambda
@@ -738,7 +739,7 @@ df.table3 <- tibble(`Mean Lambda`=lambda_mean,
   pivot_wider(values_from=`Mean Lambda`, names_from=Alternative) %>%
   as.data.frame() %>%
   select(alt_plot_names)
-write.csv(df.table3, paste0("./springRunDSM-Main/Output/Tables/BA_MeanLambda.csv"),
+write.csv(df.table3, paste0("./springRunDSM-Main/Output/Tables/BA_MeanLambdaAct5.csv"),
           row.names=FALSE)
 
 # End lambda
@@ -747,7 +748,7 @@ df.table4 <- tibble(`End Lambda`=end_lambda,
   pivot_wider(values_from=`End Lambda`, names_from=Alternative) %>%
   as.data.frame() %>%
   select(alt_plot_names)
-write.csv(df.table4, paste0("./springRunDSM-Main/Output/Tables/BA_EndLambda.csv"),
+write.csv(df.table4, paste0("./springRunDSM-Main/Output/Tables/BA_EndLambdaAct5.csv"),
           row.names=FALSE)
 
 
@@ -765,7 +766,7 @@ mlambda_wyt_df <- as_tibble(mlambda_wyt_df) %>%
   pivot_wider(names_from=Alternative, values_from=wy_mean_lambda) %>%
   as.data.frame() %>%
   select(WYT, alt_plot_names)
-write.csv(mlambda_wyt_df, paste0("./springRunDSM-Main/Output/Tables/BA_WYTMeanLambda.csv"),
+write.csv(mlambda_wyt_df, paste0("./springRunDSM-Main/Output/Tables/BA_WYTMeanLambdaAct5.csv"),
           row.names=FALSE)
 
   ########################
@@ -807,7 +808,7 @@ rear_s_df_WYT <- rear_s_df %>%
 df.tablex <- rbind(rear_s_df_all, rear_s_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_SRearUSR.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_SRearUSRAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Upper-mid Sacramento River
@@ -843,7 +844,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrUM.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrUMAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Lower-mid Sacramento River
@@ -880,7 +881,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrLM.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrLMAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, Lower Sacramento River
@@ -917,7 +918,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrLL.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrLLAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, N Delta
@@ -953,7 +954,7 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrNDelta.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrNDeltaAct5.csv"),
           row.names=FALSE)
 
 # VL migratory survival, S Delta
@@ -989,6 +990,6 @@ df.tablex <- rbind(migr_vl_df_all, migr_vl_df_WYT) %>%
   pivot_wider(names_from=Alternative, values_from=Mean) %>%
   select(WYT, Month, alt_plot_names)
 
-write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrSDelta.csv"),
+write.csv(df.tablex, paste0("./springRunDSM-Main/Output/Tables/BA_VLMigrSDeltaAct5.csv"),
           row.names=FALSE)
 

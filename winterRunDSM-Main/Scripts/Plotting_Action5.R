@@ -18,6 +18,7 @@ model_type <- "Stoch"; n.iter=100
 
 # Indicate set of alternatives to compare
 out.name <- "EIS_Act5" # NAA, Alt1-4 (4 phases of Alt2) used EIS set for Action 5
+out.name <- "BA_Act5"
 
 #####################
 # Load packages, inputs
@@ -28,20 +29,17 @@ require(tidyr);
 require(reshape2); 
 require(ggplot2)
 
-if(out.name=="EIS_Act5"){ # EIS (NAA, Alternatives 1-4) added action 5 to this because I believe it is essentially an extension of the EIS
-  n.alt <- 9 #8 without the addition of action 5
-  alt_plot_names <- c("NAA","Alt1","Alt2wTUCPwoVA","Alt2woTUCPwoVA",
-                      "Alt2woTUCPDeltaVA","Alt2woTUCPAllVA", 
-                      "Alt3",
-                      "Alt4", "Action5")
-  alt_file_names <- c("Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",
-                      "Reclamation_2021LTO_CalSim3_Alt1_2022MED_09092023",
+if(out.name=="BA_Act5"){ # EIS (NAA, Alternatives 1-4)
+  n.alt <- 8
+  alt_plot_names <- c("EXP1","EXP3","NAA","Alt2wTUCPwoVA","Alt2woTUCPwoVA",
+                      "Alt2woTUCPDeltaVA","Alt2woTUCPAllVA", "Act5")
+  alt_file_names <- c("Reclamation_2021LTO_CalSim3_EXP1_2022MED_rev10_090623_dynGWSW",
+                      "Reclamation_2021LTO_CalSim3_EXP3_2022MED_rev10_090623_dynGWSW",
+                      "Reclamation_2021LTO_CalSim3_NAA_2022MED_09072023",
                       "Reclamation_2021LTO_CalSim3_Alt2v1_woTUCP_2022MED_09132024",
                       "Reclamation_2021LTO_CalSim3_Alt2v1_wTUCP_2022MED_09132024",
                       "Reclamation_2021LTO_CalSim3_Alt2v2_noTUCP_2022MED_09132024",
                       "Reclamation_2021LTO_CalSim3_Alt2v3_noTUCP_2022MED_09132024",
-                      "Reclamation_2021LTO_CalSim3_ALT3_2022MED_092423",
-                      "Reclamation_2021LTO_CalSim3_Alt4_2022MED_09162024",
                       "CS3_Alt5_JPF_wTUCP_2022MED_0525_dv 1")
 } 
 

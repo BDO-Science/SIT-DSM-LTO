@@ -1,15 +1,19 @@
 ---
 date: "`r Sys.Date()`"
-title: "All SR SIT DSM Summary Tables - BA"
+title: "All SR SIT DSM Summary Tables - BA Act5"
 output: 
   officedown::rdocx_document:
-        reference_docx: C:/Users/avaisvil/Downloads/SIT-DSM-LTO-main/SIT-DSM-LTO-main/TableTemplate.docx
+        reference_docx: C:/Users/avaisvil/OneDrive - DOI/Documents/LTO Modeling/SIT-DSM-LTO/TableTemplate.docx
         tables:
           style: StyleAlpha
 ---
   
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 require(officedown)
 require(officer)
@@ -24,7 +28,7 @@ require(here)
 ### Population Abundance, Growth
 
 ```{r tab.cap="Table BA.1. Predicted annual total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish.", tab.id="TableBA1", echo=FALSE}
-table1 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_AllSpawners.csv")))
+table1 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_AllSpawners_Act5.csv")))
 colnames(table1) <- gsub("."," ", colnames(table1), fixed=TRUE)
 table1 <- round(table1)
 #table1  <- table1[,c(1,3,4,2,5:8)]
@@ -34,7 +38,7 @@ table1
 ##### '
 
 ```{r tab.cap="Table BA.2. Predicted annual natural-origin spring-run spawner abundance in the Central Valley.", tab.id="TableBA2", echo=FALSE}
-table2 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_NatSpawners.csv")))
+table2 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_NatSpawnersAct5.csv")))
 colnames(table2) <- gsub("."," ", colnames(table2), fixed=TRUE)
 table2 <- round(table2)
 #table2  <- table2[,c(1,3,4,2,5:8)]
@@ -44,10 +48,10 @@ table2
 ##### '
 
 ```{r tab.cap="Table BA.3. Predicted mean lambda (Nt+1/Nt) for total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish.", tab.id="TableBA3", echo=FALSE}
-table3 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_MeanLambda.csv")))
+table3 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_MeanLambdaAct5.csv")))
 table3$WYT <- "All"
 
-mlambda_wyt <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_WYTMeanLambda.csv")))
+mlambda_wyt <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_WYTMeanLambdaAct5.csv")))
 table3 <- rbind(mlambda_wyt, table3)
 
 colnames(table3) <- gsub("."," ", colnames(table3), fixed=TRUE)
@@ -59,7 +63,7 @@ table3
 ##### '
 
 ```{r tab.cap="Table BA.4. Predicted end lambda (Nt=19/Nt=1) for total spring-run spawner abundance in the Central Valley, including both natural- and hatchery-origin fish.", tab.id="TableBA4", echo=FALSE}
-table4 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_EndLambda.csv")))
+table4 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_EndLambdaAct5.csv")))
 colnames(table4) <- gsub("."," ", colnames(table4), fixed=TRUE)
 table4 <- round(table4, 3)
 #table4  <- table4[,c(2,3,1,4:7)]
@@ -72,7 +76,7 @@ table4
 ### Demographic Parameters
 
 ```{r tab.cap="Table BA.5. Predicted small juvenile rearing survival for spring-run Chinook salmon in the Upper Sacramento River.", tab.id="TableBA5", echo=FALSE}
-table5 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_SRearUSR.csv")))
+table5 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_SRearUSRAct5.csv")))
 colnames(table5) <- gsub("."," ", colnames(table5), fixed=TRUE)
 table5[,3:9] <- round(table5[,3:9], 3)
 table5
@@ -80,7 +84,7 @@ table5
 ##### ' 
 
 ```{r tab.cap="Table BA.6. Predicted smolt migratory survival for spring-run Chinook salmon in the Upper-mid Sacramento River.", tab.id="TableBA6", echo=FALSE}
-table6 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrUM.csv")))
+table6 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrUMAct5.csv")))
 colnames(table6) <- gsub("."," ", colnames(table6), fixed=TRUE)
 table6[,3:9] <- round(table6[,3:9], 3)
 table6
@@ -88,7 +92,7 @@ table6
 ##### ' 
 
 ```{r tab.cap="Table BA.7. Predicted smolt migratory survival for spring-run Chinook salmon in the Lower-mid Sacramento River.", tab.id="TableBA7", echo=FALSE}
-table7 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrLM.csv")))
+table7 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrLMAct5.csv")))
 colnames(table7) <- gsub("."," ", colnames(table7), fixed=TRUE)
 table7[,3:9] <- round(table7[,3:9], 3)
 table7
@@ -96,7 +100,7 @@ table7
 
 ##### '
 ```{r tab.cap="Table BA.8. Predicted smolt migratory survival for spring-run Chinook salmon in the Lower Sacramento River.", tab.id="TableBA8", echo=FALSE}
-table8 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrLL.csv")))
+table8 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrLLAct5.csv")))
 colnames(table8) <- gsub("."," ", colnames(table8), fixed=TRUE)
 table8[,3:9] <- round(table8[,3:9], 2)
 table8
@@ -104,7 +108,7 @@ table8
 
 ##### '
 ```{r tab.cap="Table BA.9. Predicted smolt migratory survival for spring-run Chinook salmon in the North Delta.", tab.id="TableBA9", echo=FALSE}
-table9 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrNDelta.csv")))
+table9 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrNDeltaAct5.csv")))
 colnames(table9) <- gsub("."," ", colnames(table9), fixed=TRUE)
 table9[,3:9] <- round(table9[,3:9], 3)
 table9
@@ -112,7 +116,7 @@ table9
 
 ##### '
 ```{r tab.cap="Table BA.10. Predicted smolt migratory survival for spring-run Chinook salmon in the South Delta.", tab.id="TableBA10", echo=FALSE}
-table10 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrSDelta.csv")))
+table10 <- read.csv(here(paste0("springRunDSM-Main/Output/Tables/BA_VLMigrSDeltaAct5.csv")))
 colnames(table10) <- gsub("."," ", colnames(table10), fixed=TRUE)
 table10[,3:9] <- round(table10[,3:9], 3)
 table10
